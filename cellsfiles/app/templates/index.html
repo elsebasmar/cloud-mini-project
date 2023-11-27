@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio File Upload</title>
+</head>
+<body>
+    <h1>Uploaded Audio Files</h1>
+    <ul>
+        {% for audio_file in audio_files %}
+            <li>{{ audio_file.filename }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Upload New Audio File</h2>
+    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".mp3, .wav, .ogg" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <h3>Your translation</h3>
+    <ul> {{response}}</ul>
+</body>
+</html>

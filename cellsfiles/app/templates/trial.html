@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echoscript</title>
+  <style>
+    .full-height-section {
+      height: 100vh;
+    }
+
+    .light-color-section {
+      background-size: cover;
+      background-attachment: fixed;
+      padding: 20px;
+    }
+
+    .top-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: transparent;
+      padding: 5px 10px;
+      font-family: Geneva, sans-serif;
+    }
+
+    .top-block .title {
+      font-size: 27px;
+      font-family: Geneva, sans-serif;
+    }
+
+    .top-block .links {
+      display: flex;
+    }
+
+    .top-block .links a {
+      font-size: 15px;
+      margin: 0 20px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #000000;
+    }
+
+    .hero-section {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      /* text-align: left; */
+      padding: 50px 0;
+      justify-content: space-between;
+    }
+
+    .hero-section .left-column {
+      flex:1;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      /* align-items: left; */
+      width: 50%;
+    }
+
+    .hero-section .right-column {
+      flex:1;
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      /* align-items: left; */
+      width: 50%;
+    }
+
+    .hero-section .full-column {
+      flex:1;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      /* align-items: left; */
+      width: 100%;
+    }
+
+    .hero-section .title {
+      float: left;
+      margin-right: 20px;
+      font-size: 26px;
+      font-weight: bolder;
+      font-family: Geneva, sans-serif;
+      margin-bottom: 1px;
+      margin-top: 120px;
+    }
+
+    .hero-section .title2 {
+      float: center;
+      margin-right: 20px;
+      font-size: 26px;
+      font-weight: bolder;
+      font-family: Geneva, sans-serif;
+      margin-bottom: 1px;
+      margin-top: 150px;
+    }
+
+    .hero-section .textp {
+      position: relative;
+      float: center;
+      margin-right: 20px;
+      font-size: 20px;
+      font-weight: lighter;
+      font-family: Geneva, sans-serif;
+    }
+
+    .divider {
+      border-top: 1px solid #000000;
+      margin: 10px 0;
+    }
+
+    .hero-section .subtitle {
+        /* position: relative; */
+        bottom: 1px;
+        font-size: 35px;
+        font-weight: 100;
+        font-family:'Lucida Sans', sans-serif;
+    }
+
+    .hero-section .min_number {
+        position: relative;
+        margin-right: 20px;
+        margin-bottom: 1px;
+        margin-top: 120px;
+        bottom: 1px;
+        font-size: 200px;
+        font-weight: 100;
+        font-family:'Lucida Sans', sans-serif;
+    }
+
+    .hero-section .number_text {
+        position: relative;
+        margin-right: 20px;
+        bottom: 1px;
+        font-size: 30px;
+        font-weight: 100;
+        font-family:'Lucida Sans', sans-serif;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section .subtitle {
+        font-size: 24px;
+      }
+
+      .hero-section .min_number {
+        margin-top: 180px;
+        font-size: 150px;
+      }
+
+      .hero-section .number_text {
+        font-size: 15px;
+      }
+
+      .transparent-text-box{
+        width: 100px;
+      }
+    }
+
+    .hero-section .button {
+      display: inline-block;
+      background-color: transparent;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 5px 10px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      width: auto;
+      outline: none;
+      text-align: center;
+      text-decoration: none;
+      width: 100px;
+      margin-bottom: 80px;
+    }
+
+    .hero-section .button:hover {
+        background-color: transparent;
+        border: 2px solid #fdfcfc;
+        border-radius: 10px;
+        color: #fdfcfc;
+    }
+
+    .hero-section .button2 {
+      position: relative;
+      /* top: 50%; */
+      left: 50%;
+      transform: translate(-50%, 0%);
+      background-color: transparent;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 5px 10px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      width: auto;
+      outline: none;
+      text-align: center;
+      text-decoration: none;
+      width: 100px;
+    }
+
+    .hero-section .button2:hover {
+        background-color: transparent;
+        border: 2px solid #fdfcfc;
+        border-radius: 10px;
+        color: #fdfcfc;
+    }
+
+    .transparent-text-box {
+      background-color: rgba(255, 255, 255, 0.7);
+      border: 2px solid black; /* Adjust border width as needed */
+      border-radius: 10px;
+      padding: 10px; /* Adjust padding as needed */
+      opacity: 0.8; /* Adjust opacity level (0-1) */
+      margin-bottom: 10px;
+      margin-top: 10px;
+      width: 1000px;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+
+    body {
+        background-image: url(/static/background.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+    }
+
+
+  </style>
+</head>
+<body>
+  <section class="full-height-section">
+    <div class="top-block">
+      <div class="title">Echoscript</div>
+      <div class="links">
+        <a href="{{ url_for('login') }}">LOGIN</a>
+        <a href="{{ url_for('signup') }}">SIGN UP</a>
+        <a href="https://github.com/">ABOUT US</a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="hero-section">
+      <div class="left-column">
+        <h1 class="title">Welcome to your easy audio-to-text converter</h1>
+        <p class="subtitle">Where cutting-edge technology meets seamless transcription conversion, transforming audio into accurate and effortlessly transcribed text with just a click.</p>
+        <a href="{{ url_for('login') }}" class="button">Learn more</a>
+      </div>
+
+      <div class="right-column">
+        <p class="min_number">10</p>
+        <h1 class="number_text">Number of minutes converted</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="full-height-section">
+    <div class="hero-section">
+      <div class="full-column">
+        <h1 class="title2">Try it now!</h1>
+        <p class="textp">Our login free version only accept up to 30s audio files. Sign up for a full experience!</p>
+        <form action="{{ url_for('upload30seg') }}" method="post" enctype="multipart/form-data">
+          <label for="file">Choose an audio file:</label>
+          <input type="file" id="file" name="file" accept='audio/*' required>
+          <button class="submit">Upload</button>
+        </form>
+        <div class="transparent-text-box">
+          <p>
+            <ul> {{response}}</ul>
+          </p>
+        </div>
+        <a href="{{ url_for('signup') }}" class="button2">Sign Up</a>
+      </div>
+    </div>
+    <footer>
+    <p>LONDON, UK</p>
+    </footer>
+  </section>
+
+
+</body>
+</html>
