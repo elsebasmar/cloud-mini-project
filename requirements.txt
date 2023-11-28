@@ -2,3 +2,4 @@ Flask
 Flask-SQLAlchemy
 google-cloud-storage
 pydub
+ffprobe
