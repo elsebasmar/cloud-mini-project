@@ -146,7 +146,6 @@ def upload30seg():
             output = query(basedir+'/uploads/'+output_filename)
 
             os.remove(basedir+'/uploads/'+output_filename)
-            os.remove(basedir+'/uploads/'+input_filename)
 
             if 'error' in output.keys():
                 return render_template('trial.html', response = 'Format of file is incorrect.')
