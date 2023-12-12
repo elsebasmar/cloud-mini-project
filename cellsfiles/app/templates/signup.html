@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,25 +11,30 @@
             text-align: center;
             margin: 50px;
         }
+
         h1 {
             color: #3498db;
         }
+
         form {
             max-width: 300px;
             margin: auto;
         }
+
         label {
             display: block;
             text-align: left;
             margin: 15px 0 5px;
         }
+
         input {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
             box-sizing: border-box;
         }
-        .btn {
+
+        .button {
             display: inline-block;
             padding: 10px 20px;
             font-size: 16px;
@@ -42,24 +48,51 @@
             border-radius: 5px;
             box-shadow: 0 2px #3498db;
         }
-        .btn:hover {
+
+        .button:hover {
             background-color: #2980b9;
         }
     </style>
 </head>
+
 <body>
     <h1>Sign up for TranscribifyConvert</h1>
-    <form>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+    <!-- Display success messages -->
+    {% with messages = get_flashed_messages(category_filter=['success']) %}
+        {% if messages %}
+            <ul class="flash-messages success">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
 
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+    <!-- Display error messages -->
+    {% with messages = get_flashed_messages(category_filter=['error']) %}
+        {% if messages %}
+            <ul class="flash-messages error">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
 
-        <label for="password">Create Password:</label>
-        <input type="password" id="password" name="password" required>
+    <form method="post" action="{{ url_for('signup') }}">
+        {{ form.hidden_tag() }}
 
-        <a href="{{ url_for('dashboard') }}" class="btn">Signup</a>
+        <label for="{{ form.email.id }}">Email:</label>
+        {{ form.email(placeholder='Enter your email') }}
+
+        <label for="{{ form.username.id }}">Username:</label>
+        {{ form.username(placeholder='Enter your username') }}
+
+        <label for="{{ form.password.id }}">Password:</label>
+        {{ form.password(placeholder='Enter your password') }}
+
+        {{ form.submit() }}
     </form>
 </body>
+
 </html>

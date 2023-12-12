@@ -1,6 +1,7 @@
 Flask
 Flask-SQLAlchemy
 google-cloud-storage
+google-cloud-bigquery
 pydub
 ffprobe-python
 ffmpeg
