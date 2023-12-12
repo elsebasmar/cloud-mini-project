@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Echoscript</title>
+    <style>
+        body {
+            background-image: url(/static/background.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        .top-block {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: transparent;
+          padding: 5px 10px;
+          font-family: Geneva, sans-serif;
+        }
+
+        .top-block .title {
+          font-size: 27px;
+          font-family: Geneva, sans-serif;
+        }
+
+        .top-block .links {
+          display: flex;
+        }
+
+        .top-block .links a {
+          font-size: 15px;
+          margin: 0 20px;
+          font-weight: bold;
+          text-decoration: none;
+          color: #000000;
+        }
+
+        .divider {
+          border-top: 1px solid #000000;
+          margin: 10px 0;
+        }
+
+
+        .login-box {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 400px;
+          background-color: rgba(255, 255, 255, 0.4); /* Adjust opacity level (0-1) */
+          padding: 20px;
+          border: none;
+          border-radius: 10px; /* Set corner radius */
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-box form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .login-box label {
+          display: block;
+          margin-bottom: 5px;
+        }
+
+        .login-box input {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          margin-bottom: 10px;
+        }
+
+        .button {
+          display: block;
+          padding: 5px 10px;
+          border: 2px solid black;
+          background-color: transparent;
+          border-radius: 10px;
+          color: #000;
+          font-weight: bold;
+          cursor: pointer;
+          width: auto;
+          position: center;
+        }
+
+        .button:hover {
+            background-color: transparent;
+            border: 2px solid #fdfcfc;
+            border-radius: 10px;
+            color: #fdfcfc;
+        }
+
+        .remember-me {
+            text-align: left;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+  <section class="full-height-section">
+    <div class="top-block">
+      <div class="title">Echoscript</div>
+      <div class="links">
+        <a href="{{ url_for('home') }}">HOME</a>
+        <a href="{{ url_for('signup') }}">SIGN UP</a>
+        <a href="https://github.com/">ABOUT US</a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+
+
+    <div class="login-box">
+      <h2>Login</h2>
+      <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <div class="remember-me">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Remember me</label>
+        </div>
+
+        <a href="{{ url_for('dashboard') }}" class="button">Login</a>
+      </form>
+    </div>
+</body>
+</html>
