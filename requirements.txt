@@ -6,3 +6,4 @@ pydub
 ffprobe-python
 ffmpeg
 flask_wtf
+pytz
