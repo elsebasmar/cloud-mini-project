@@ -52,7 +52,7 @@ The project Directory:
 The Programflow is approximately shown throught the flow chart below describing each and every page.
 
 ## Operations in the App
-The URL we would be using for the application is [http://34.147.230.220:5000/speech](http://34.147.230.220:5000/speech)
+The URL we would be using for the application is [http://34.147.158.180:5000/](http://34.147.158.180:5000/)
 
 Once you open the URL you can see the Dashboard which is the home page of the app with the menu bar with options: Login, Signup and About Us
 
