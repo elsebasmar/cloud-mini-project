@@ -153,7 +153,6 @@ def signup():
 
         # Get the result from the query
         results = query_job.result()
-        print('IM HERE')
         # Validating if the user is already in the dataset
         if results.total_rows != 0:
             flash('Try Signing up with different username/password.', 'error')
@@ -212,7 +211,7 @@ class UploadFileForm(FlaskForm):
     )
     submit = SubmitField("submit", render_kw={'class': 'button'})
 
-@app.route('/dashboard')
+@app.route('/dashboard', methods = ['GET'])
 def dashboard():
     # Validating the session
     if not session.get('uid'):
@@ -294,16 +293,6 @@ def upload30seg():
 
     return render_template('trial.html')
 
-
-
-
-@app.route('/thankyou')
-def thankyou():
-    return render_template('thankyou.html')
-
-@app.route('/transcript')
-def transcript():
-    return render_template('transcript.html')
 
 # Upload format page
 
