@@ -1,4 +1,4 @@
-# Audio to Text Coverter Using GCP and Flask (Echoscript)
+# Audio to Text Coverter Using GCP and Flask ([Echoscript](http://34.147.158.180:5000/))
 ### System Architecture
 ![Apllication Architecture](https://github.com/elsebasmar/cloud-mini-project/assets/148969526/c92439b9-87ba-4daa-b3d1-037ee432afd5)
 
