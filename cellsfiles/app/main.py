@@ -1,5 +1,5 @@
 # All flask modules
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, json
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed, FileRequired
@@ -426,6 +426,43 @@ def upload():
     except Exception as e:
         flash(f'Upload failed due to an error: {str(e)}', 'error')
         return redirect(url_for('dashboard',username=session.get('username')))
+
+# Delete of files
+@app.route('/deletefile/<id>', methods=['DELETE'])
+def deletefile(id):
+    client = bigquery.Client(project=PROJECT_ID)
+    query = f"SELECT * FROM  `{PROJECT_ID}.{BQ_DS}.{BQ_AUDT}` WHERE `audio_id` = '{id}'"
+    query_job = client.query(query)
+    results = query_job.result()
+    list_r = list(results)
+
+    if len(list_r) ==0:
+        return jsonify({'error':'file id not found!'}), 404
+
+    query = f"DELETE FROM  `{PROJECT_ID}.{BQ_DS}.{BQ_AUDT}` WHERE `audio_id` = '{id}'"
+    query_job = client.query(query)
+    results = query_job.result()
+
+    return jsonify({'success': True})
+
+# Get all files ids
+@app.route('/get_all_files_ids', methods=['GET'])
+def get_all_files_ids():
+    client = bigquery.Client(project=PROJECT_ID)
+    query = f"SELECT * FROM  `{PROJECT_ID}.{BQ_DS}.{BQ_AUDT}`"
+    query_job = client.query(query)
+    records = [dict(row) for row in query_job]
+    return json.dumps(records)
+
+# Get all files ids
+@app.route('/get_all_users_ids', methods=['GET'])
+def get_all_users_ids():
+    client = bigquery.Client(project=PROJECT_ID)
+    query = f"SELECT * FROM  `{PROJECT_ID}.{BQ_DS}.{BQ_USERT}`"
+    query_job = client.query(query)
+    records = [dict(row) for row in query_job]
+    return json.dumps(records)
+
 
 # Log out page
 
