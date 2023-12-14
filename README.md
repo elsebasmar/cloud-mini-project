@@ -202,6 +202,8 @@ def upload30seg():
     return render_template('trial.html')
 ~~~
 
+In the operations done on the Audio files we do the CRUD operation through REST services. Mainly for creating the transcript for an audio file we uploading an audio file through the POST which can be seen in the upload function of the code in the **main.py** file. For the GET functionality we are using **curl -X "GET" 34.147.158.180:5000/get_all_files_ids** which would give the output of all the audio files details which have been uploaded by different User IDs. Lastly for the DELETE we are using **curl -X "DELETE" 34.147.158.180:5000/deletefile/<file_id>** which would give us the functionality to delete any audio file though the audio file ID number. 
+
 ## HTML Templates
 
 We are using a total of 9 HTML templates for each page to be as UI friendly as possible and attractive.
