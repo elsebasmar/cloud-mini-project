@@ -262,6 +262,6 @@ Transcript: This page gives the transcript of the processed audio file in the fo
 
 ## Conclusion
 
-We buit an Application which can take take input of an audio file convert into an .wav file and can annotate the text file from the audio in the file, With that we are also able to aplly the authentication system in the application where the user is able to access the application only after logging into the application through an Email and password.
+We buit an Application which can take take input of an audio file convert into an .wav file and can annotate the text file from the audio in the file, With that we are also able to apply the authentication system in the application where the user is able to access the application only after logging into the application through an Email and password.
 
 
